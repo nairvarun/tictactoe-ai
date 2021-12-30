@@ -32,8 +32,8 @@ function gameStatus(board) {
     else if (board[3] == board[6] && board[6] == board[9]) {return board[3] == (board[0] ? 'x' : 'o') ? -1 : 1;}
     else if (board[1] == board[5] && board[5] == board[9]) {return board[1] == (board[0] ? 'x' : 'o') ? -1 : 1;}
     else if (board[3] == board[5] && board[5] == board[7]) {return board[3] == (board[0] ? 'x' : 'o') ? -1 : 1;}
-    else if(validMoves(board).length == 0) {return 0}
-    else {return null}
+    else if(validMoves(board).length == 0) {return 0;}
+    else {return null;}
 }
 //}}}
 

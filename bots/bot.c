@@ -89,7 +89,7 @@ int GetGameStatus(int board[])
 	else if (board[7] == board[8] && board[8] == board[9]){return (board[0] == board[7] ? 1 : -1);}
 	else if (board[1] == board[4] && board[4] == board[7]){return (board[0] == board[1] ? 1 : -1);}
 	else if (board[2] == board[5] && board[5] == board[8]){return (board[0] == board[2] ? 1 : -1);}
-	else if (board[7] == board[6] && board[6] == board[9]){return (board[0] == board[7] ? 1 : -1);}
+	else if (board[3] == board[6] && board[6] == board[9]){return (board[0] == board[7] ? 1 : -1);}
 	else if (board[1] == board[5] && board[5] == board[9]){return (board[0] == board[1] ? 1 : -1);}
 	else if (board[3] == board[5] && board[5] == board[7]){return (board[0] == board[3] ? 1 : -1);}
 	else if (valid_moves[0] == 0) {return 0;}
@@ -119,6 +119,20 @@ void StarGame(int board[])
 	{
 		Play(board, is_ai_move);
 		is_ai_move = is_ai_move ? 0 : 1;
+	}
+	switch (GetGameStatus(board))
+	{
+	case 1:
+		printf("ai won\n");
+		break;
+	case -1:
+		printf("you won -_- pls report this bug\n");
+		break;
+	case 0:
+		printf("draw\n");
+		break;
+	default:
+		break;
 	}
 }
 
